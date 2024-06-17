@@ -1,0 +1,158 @@
+.color-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.counter {
+  margin-left: 10px;
+  font-weight: bold;
+}
+#timetable {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+  grid-template-rows: 40px repeat(24, 1fr);
+  grid-gap: 1px;
+  background-color: #ddd;
+  font-family: Arial, sans-serif;
+}
+
+.col-heading {
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+}
+
+.row-heading {
+  background-color: #555;
+  color: #fff;
+  font-weight: bold;
+  text-align: right;
+  padding: 5px;
+}
+
+.grid-cell {
+  background-color: #fff;
+  padding: 5px;
+}
+
+.color-palette.selected {
+  border: 3px solid #000; /* Add a black border */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+}
+
+.grid-cell.hovered {
+  outline: 2px solid #000; /* Add a black outline */
+}
+
+/* Define text color variables */
+:root {
+  --text-color-1: #FFFFFF; /* White */
+  --text-color-2: #000000; /* Black */
+}
+
+/* Apply background and text colors */
+.color-palette[data-id="1"] {
+  background-color: #e20778;
+  color: var(--text-color-1); /* White text for accessible contrast */
+}
+
+.color-palette[data-id="6"] {
+  background-color: #F17184;
+  color: var(--text-color-2); /* Black text for accessible contrast */
+}
+
+.color-palette[data-id="15"] {
+  background-color: #fcaf17;
+  color: var(--text-color-2); /* Black text for accessible contrast */
+}
+
+.color-palette[data-id="2"] {
+  background-color: #e9cb1a;
+  color: var(--text-color-2); /* Black text for accessible contrast */
+}
+
+.color-palette[data-id="10"] {
+  background-color: #B6CD2D;
+  color: var(--text-color-2); /* Black text for accessible contrast */
+}
+
+.color-palette[data-id="3"] {
+  background-color: #09ad87;
+  color: var(--text-color-1); /* White text for accessible contrast */
+}
+
+.color-palette[data-id="19"] {
+  background-color: #41c3dc;
+  color: var(--text-color-2); /* Black text for accessible contrast */
+}
+
+.color-palette[data-id="8"] {
+  background-color: #3e77b7;
+  color: var(--text-color-1); /* White text for accessible contrast */
+}
+
+.color-palette[data-id="11"] {
+  background-color: #004990;
+  color: var(--text-color-1); /* White text for accessible contrast */
+}
+
+.color-palette[data-id="4"] {
+  background-color: #800080;
+  color: var(--text-color-1); /* White text for accessible contrast */
+}
+
+.color-palette[data-id="5"] {
+  background-color: #00BFFF;
+  color: var(--text-color-2); /* Black text for accessible contrast */
+}
+
+.color-palette[data-id="7"] {
+  background-color: #FFA500;
+  color: var(--text-color-2); /* Black text for accessible contrast */
+}
+
+.color-palette[data-id="9"] {
+  background-color: #FF0000;
+  color: var(--text-color-1); /* White text for accessible contrast */
+}
+
+.color-palette[data-id="12"] {
+  background-color: #800000;
+  color: var(--text-color-1); /* White text for accessible contrast */
+}
+
+.color-palette[data-id="13"] {
+  background-color: #008080;
+  color: var(--text-color-1); /* White text for accessible contrast */
+}
+
+.color-palette[data-id="14"] {
+  background-color: #000080;
+  color: var(--text-color-1); /* White text for accessible contrast */
+}
+
+.color-palette[data-id="16"] {
+  background-color: #008000;
+  color: var(--text-color-1); /* White text for accessible contrast */
+}
+
+.color-palette[data-id="17"] {
+  background-color: #FF00FF;
+  color: var(--text-color-2); /* Black text for accessible contrast */
+}
+
+.color-palette[data-id="18"] {
+  background-color: #808000;
+  color: var(--text-color-2); /* Black text for accessible contrast */
+}
