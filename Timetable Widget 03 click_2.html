@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timetable Widget 3</title>
+  <link rel="stylesheet" href="stylesTWdrag3.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-4 border border-dark rounded p-3">
+      <h1 class="text-center ">Time Checker 2</h1>
+      <p class="text-center">Click on the coloured bars below and add them to the timetable!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div id="color-palette" class="d-flex flex-column">
+        <div id="unfilled-count" class="mb-2">Unfilled boxes: <span id="count">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="1" style="background-color: #e20778;"><strong>SLEEP</strong>  <span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="6" style="background-color: #F17184;"><strong>EATING / COOKING</strong>  <span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="15" style="background-color: #fcaf17;"><strong>PERSONAL GROOMING & CLEANING</strong>  <span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="2" style="background-color: #e9cb1a;"><strong>EXERCISE</strong>  <span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="10" style="background-color: #B6CD2D;"><strong>TIME WITH FAMILY</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="3" style="background-color: #09ad87;"><strong>TIME WITH FRIENDS</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="19" style="background-color: #41c3dc;"><strong>CLASS</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="8" style="background-color: #3e77b7;"><strong>STUDY</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="11" style="background-color: #004990;"><strong>PART TIME JOB</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="4" style="background-color: #800080;"><strong>GROCERY SHOPPING</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="5" style="background-color: #00BFFF;"><strong>LAUNDRY</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="7" style="background-color: #FFA500;"><strong>TRAVELLING / COMMUTING</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="9" style="background-color: #FF0000;"><strong>FLC</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="12" style="background-color: #800000;"><strong>GAMING / SOCIAL MEDIA / TV</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="13" style="background-color: #008080;"><strong>HOBBIES</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="14" style="background-color: #000080;"><strong>CAREER EVENTS / NETWORKING</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="16" style="background-color: #008000;"><strong>STUDENT GROUP ACTIVITIES</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="17" style="background-color: #FF00FF;"><strong>APPOINTMENTS</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="18" style="background-color: #808000;"><strong>OTHER</strong><span class="counter">0</span></div>
+          <div class="color-palette mt-1 p-1" data-id="erase" style="background-color: #FFFFFF;"><strong>ERASE</strong></div>
+          <button id="refresh-btn" class="btn btn-primary mt-2"><strong>REFRESH</strong></button>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div id="timetable-container">
+        <div id="timetable" class="table-responsive">
+          <div class="col-heading">Time</div>
+          <div class="col-heading">Monday</div>
+          <div class="col-heading">Tuesday</div>
+          <div class="col-heading">Wednesday</div>
+          <div class="col-heading">Thursday</div>
+          <div class="col-heading">Friday</div>
+          <div class="col-heading">Saturday</div>
+          <div class="col-heading">Sunday</div>
+
+          <div class="row-heading">12AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">1AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">2AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">3AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">4AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">5AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">6AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">7AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">8AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">9AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">10AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">11AM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">12PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">1PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">2PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">3PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">4PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">5PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">6PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">7PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">8PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">9PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">10PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+
+          <div class="row-heading">11PM</div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="scriptTWclick3.js"></script>
+</body>
+</html>
